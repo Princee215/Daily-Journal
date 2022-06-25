@@ -1,0 +1,22 @@
+
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+    <p> Welcome Folks! It's my pleasure to have you on my brand new Blog Website where you could Create multiple blogs and Parse through blogs uploaded by other people by clicking on "Read more" that will direct you to that blog page. Go Create your first Blog by clicking to Compose button if you’re new to blogs you can also refer to "Information wants to be free".Beware Don't change paragraphs.If you face any issue contact creater of this web app. Voila! </p>
+
+    <form action="/direct" method="post">
+      <button class="btn btn-primary button" type="submit">Compose</button>
+    </form>
+
+  <%  posts.forEach(function(post){ %>
+
+    <h3><%=post.title%></h3>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
